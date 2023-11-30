@@ -17,7 +17,7 @@ druggies = filter(triUmp, triUmp$DrugUser == 'yes')
 
 A new  preventative aides drug (triUmpsal) is under test in clinical trials. Consider only the DrugUsers, does this drug seem effective?  
 
-$H_0$ There is no deifference between the new preventative AIDS drug treatment and the effct it has on users.
+$H_0$ There is no difference between the new preventative AIDS drug treatment and the effect it has on users.
 
 $H_A$ There is a difference between the new preventative AIDS drug treatment and the effect it has on users.
 
@@ -37,7 +37,7 @@ Both the response variable and the exploratory variable are categorical, therefo
 barchartGC(~infected + treatment,data=druggies, type="percent")
 ```
 
-This graph shows that for those people who got infected, a very high amount got the placebo, as compared to those who got the preventative drug. 
+This graph shows that for those people who got infected, the majority received the placebo, as compared to those who received the preventative drug. 
 
 
 ### Numerical Descriptive Results
@@ -47,7 +47,7 @@ table1 <- xtabs(~infected + treatment, data=druggies)
 rowPerc(table1)
 ```
 
-This table shows the placebo group is about 3 times as likely to get infected as opposed to those that received the preventative drug.
+This table shows the placebo group is about 3 times as likely to get infected as opposed to those that received the preventative drug. This shows that the active preventative is working.
 
 ## Inferential Results
 
@@ -63,9 +63,9 @@ We reject the null hypothesis because the P value is 0.0000001242 which is below
 druggies$infected = factor(druggies$infected, c('none', 'aids'))
 fisher.test(druggies$treatment,druggies$infected)
 ```
-The P value in this test is equal to .0000000423. The people who got the vaccine are almost 3 times more protected from AIDS compared to the placebo receiving people.
+The P value in this test is equal to .0000000423. The data shows that the people who received the vaccine were three times more protected from AIDs than those who recieved the placebo.
 
 
 # Discussion and Conclusion
 
-The vaccine is effective in preventing AIDS. the graphical data showed the significant difference in the people with AIDS who received the vaccine compared to the placebo vaccine. Our numerical and inferential data also tells us that the vaccine was 3 times more protective to aids than the placebo vaccine. The Chisq test which gave us a P-Value less than 0.05, which means we reject the null hypothesis. In conclusion, the new preventative drug treatment is effective against the infection AIDS. 
+The vaccine is effective in preventing AIDS. The graphical data showed the significant difference in the people with AIDS who received the vaccine compared to the placebo vaccine. Our numerical and inferential data also tells us that the vaccine was three times more protective from AIDs than the placebo. The Chisq test gave us a P-Value less than 0.05, which means we reject the null hypothesis- there IS a very marked difference in those who were given the vaccine as opposed to the placebo. In conclusion, the new preventative drug treatment is effective against the infection AIDS. 
